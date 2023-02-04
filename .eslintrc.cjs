@@ -5,9 +5,11 @@ module.exports = {
         node: true,
     },
     extends: [
-        "eslint:recommended",
+        'prettier',
         "plugin:vue/vue3-recommended",
+        "plugin:prettier/recommended",
         "@vue/eslint-config-typescript",
+        "@vue/eslint-config-prettier",
         'plugin:tailwindcss/recommended'
     ],
     plugins: [
