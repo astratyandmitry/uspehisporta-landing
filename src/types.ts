@@ -7,6 +7,6 @@ export type Section = {
 export type Box = {
   label: string;
   title: string;
-  icon: string;
+  icon: any;
   url: string;
 };
