@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{
+  shopUrl: string;
+}>();
+</script>
 
 <template>
   <header class="header">
@@ -7,7 +11,7 @@
     </div>
 
     <div class="actions">
-      <button class="button-shop group">
+      <a :href="props.shopUrl" target="_blank" class="button-shop group">
         <span class="hidden md:block">Перейти в магазин</span>
         <span class="block md:hidden">В магазин</span>
 
@@ -25,7 +29,7 @@
             d="M8.25 4.5l7.5 7.5-7.5 7.5"
           />
         </svg>
-      </button>
+      </a>
     </div>
   </header>
 </template>

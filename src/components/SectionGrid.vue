@@ -4,6 +4,7 @@ import { Section } from "../types";
 
 const props = defineProps<{
   section: Section;
+  settings: Record<string, string>;
 }>();
 </script>
 
@@ -21,6 +22,7 @@ const props = defineProps<{
         v-for="box in props.section.boxes"
         :key="box.title"
         :box="box"
+        :settings="props.settings"
       />
     </div>
   </div>

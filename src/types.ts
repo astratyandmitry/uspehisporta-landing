@@ -8,5 +8,5 @@ export type Box = {
   label: string;
   title: string;
   icon: any;
-  url: string;
+  settings: string;
 };

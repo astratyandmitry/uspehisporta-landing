@@ -2,18 +2,29 @@
 import AppHeader from "./components/AppHeader.vue";
 import { useAppStore } from "./store";
 import SectionGrid from "./components/SectionGrid.vue";
+import { onMounted, ref } from "vue";
 
 const { sections } = useAppStore();
+const settings = ref<Record<string, string>>({});
+
+onMounted(() => {
+  fetch("https://shop.uspehisporta.moscow/api/settings")
+    .then((response) => response.json())
+    .then((data) => {
+      settings.value = data.settings;
+    });
+});
 </script>
 
 <template>
   <main class="app">
-    <AppHeader />
+    <AppHeader :shop-url="settings['url.shop']" />
 
     <section class="body">
       <SectionGrid
         v-for="section in sections"
         :key="section.title"
+        :settings="settings"
         :section="section"
       />
     </section>

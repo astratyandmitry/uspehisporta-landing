@@ -2,12 +2,13 @@
 import { Box } from "../types";
 
 const props = defineProps<{
+  settings: Record<string, string>;
   box: Box;
 }>();
 </script>
 
 <template>
-  <a :href="props.box.url" class="box" target="_blank">
+  <a :href="settings[props.box.settings]" class="box" target="_blank">
     <div class="box-content">
       <div class="box-label">
         {{ props.box.label }}
