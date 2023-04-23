@@ -8,10 +8,10 @@ const { sections } = useAppStore();
 const settings = ref<Record<string, string>>({});
 
 onMounted(() => {
-  fetch("https://shop.uspehisporta.moscow/api/settings")
+  fetch("/settings.json")
     .then((response) => response.json())
     .then((data) => {
-      settings.value = data.settings;
+      settings.value = data;
     });
 });
 </script>
