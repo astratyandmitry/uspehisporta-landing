@@ -42,7 +42,7 @@ export const useAppStore = defineStore("app", () => {
     },
     {
       title: "Наши VIP-вертки",
-      subtitle: "на уважаемыех формуах",
+      subtitle: "на уважаемых форумах",
       boxes: [
         {
           title: "DO4a.me",
